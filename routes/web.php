@@ -22,3 +22,4 @@ Route::post('/formation/{formationId}/forum', 'CommentController@store_formation
 Route::get('/formation/{formationId}/page/{pageId}', 'PageController@view')->name('page.view');
 Route::get('/formation/{formationId}/page/{pageId}/forum', 'CommentController@page')->name('page.forum');
 Route::post('/formation/{formationId}/page/{pageId}/forum', 'CommentController@store_page')->name('page.forum');
+Route::post('/search/{query}', 'FormationController@search')->name('search');
