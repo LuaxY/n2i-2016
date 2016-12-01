@@ -7,7 +7,7 @@ use App\Formation;
 
 class FormationController extends Controller
 {
-    public function list()
+    public function all()
     {
         $formations = Formation::all();
 
