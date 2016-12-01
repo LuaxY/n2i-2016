@@ -18,21 +18,22 @@
         <div class="container">
           <form method="POST" action="">
             <div class="row">
-              <div class="six columns">
-                <label for="mailInput">Your email</label>
+              <h3 class="center">Se connecter</h3>
+              <div class="twelve columns">
+                <label for="mailInput">Email</label>
                 <input class="u-full-width" type="email" placeholder="email@operator.com" id="mailInput">
               </div>
-              <div class="six columns">
-                <label for="passwordInput">Your password</label>
+              <div class="twelve columns">
+                <label for="passwordInput">Mot de Passe</label>
                 <input class="u-full-width" type="password" placeholder="*********" id="passwordInput">
               </div>
             </div>
-            <input type="submit" value="Connexion">
+            <div class="center" style="margin-top:35px;"><input type="submit" value="Connexion"></div>
           </form>
+        </div>
 
-          <div class="line-separator"></div>
-
-          <p>Vous n'êtes pas inscrit ?</p>
+        <div class="footer">
+          <p>test</p>
         </div>
     </body>
 </html>
