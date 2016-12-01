@@ -1,0 +1,23 @@
+body{
+  margin:0;
+}
+
+p{
+  font-weight: 600;
+}
+
+.header{
+  background: #434a50;
+  color: white;
+}
+
+.header h1{
+  padding: 10px;
+}
+
+.line-separator{
+  height:1px;
+  background:#717171;
+  border-bottom:1px solid #ffffff;
+  margin-bottom: 25px;
+}
