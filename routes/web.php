@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', 'FormationController@list')->name('home');
+Route::get('/', 'FormationController@all')->name('home');
 Route::get('/login', 'UserController@login_form')->name('login');
 Route::post('/login', 'UserController@login')->name('login');
 Route::get('/logout', 'UserController@logout')->name('logout');
-Route::get('/formation', 'FormationController@list')->name('formation.list');
+Route::get('/formation', 'FormationController@all')->name('formation.list');
 Route::get('/formation/{formationId}', 'FormationController@view')->name('formation.view');
 Route::get('/formation/{formationId}/forum', 'CommentController@formation')->name('formation.forum');
 Route::post('/formation/{formationId}/forum', 'CommentController@store_formation')->name('formation.forum');
