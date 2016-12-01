@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FormationController@list')->name('home');
+Route::get('/login', 'UserController@login_form')->name('login');
+Route::post('/login', 'UserController@login')->name('login');
+Route::get('/logout', 'UserController@logout')->name('logout');
