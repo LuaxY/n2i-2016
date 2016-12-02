@@ -1,7 +1,9 @@
 @extends('layout.layout')
 @section('title') Formations @endsection
 @section('content')
-<h1 style="padding:10px;">FORMATIONS</h1>
+<a href=""><img src="{{ URL::asset('img/back.png') }}" width="48" class="backLogo"></a>
+<h1 style="padding:10px;display: inline;">FORMATIONS</h1>
+<p style="margin-left:10px;"><a href="{{ route('logout') }}">Déconnexion ?</a></p>
 <div class="search">
   <form class="" action="{{ URL::route('search') }}" method="post">
       <p style="display:inline;">Recherche: </p><input type="text" name="query" value="">

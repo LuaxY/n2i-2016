@@ -53,15 +53,20 @@ a .homebox:hover p {
   color: #37434F;
 }
 
+.backLogo{
+  cursor: pointer;
+  display: inline;
+}
+
 
 @media (max-width: 1460px){
-  img{
+  .center img{
     width: 200px;
   }
 }
 
 @media (max-width: 1080px){
-  img{
+  .center img{
     width: 180px;
   }
 }
@@ -73,7 +78,7 @@ a .homebox:hover p {
   .footer{
     display: none;
   }
-  img{
+  .center img{
     width: 100px;
   }
 }
@@ -82,7 +87,7 @@ a .homebox:hover p {
   .footer{
     display: none;
   }
-  img{
+  .center img{
     width: 100px;
   }
 }
