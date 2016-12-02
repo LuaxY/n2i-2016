@@ -30,7 +30,7 @@
         }
 
     </style>
-    <script src="{{ URL::asset('/js/three.min.js') }}"></script>
+    <script src="{{ URL::asset('js/three.min.js') }}"></script>
     <script src="{{ URL::asset('js/OrbitControls.js') }}"></script>
     <script src="{{ URL::asset('js/OBJLoader.js') }}"></script>
     <script src="{{ URL::asset('js/MTLLoader.js') }}"></script>
