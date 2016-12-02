@@ -1,7 +1,3 @@
-html{
-  overflow: hidden;
-}
-
 body{
   margin:0;
 }
@@ -72,6 +68,24 @@ p{
   background:#717171;
   border-bottom:1px solid #ffffff;
   margin-bottom: 25px;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  background: #37434f;
+}
+
+.footer .content{
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.footer .content h3{
+  color: white;
+  margin-bottom: 0;
 }
 
 /* BASE */
