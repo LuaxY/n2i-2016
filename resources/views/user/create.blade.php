@@ -23,7 +23,7 @@
                   <input class="u-full-width" type="password" placeholder="*********" id="passwordInput">
               </div>
           </div>
-          <div class="center" style="margin-top:35px;"><input type="submit" value="Connexion"></div>
+          <div class="center" style="margin-top:35px;"><input type="submit" value="Inscription"></div>
       </form>
     </div>
   </div>
