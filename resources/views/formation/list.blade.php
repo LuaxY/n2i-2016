@@ -8,7 +8,7 @@
   </form>
 </div>
 @if (empty($formations))
-    Aucun post n'est disponible... Veuillez réessayer ultérieurement.
+    <p>Aucun post n'est disponible... Veuillez réessayer ultérieurement.</p>
 @else
     @foreach ($formations as $formation)
         <div class="item">
