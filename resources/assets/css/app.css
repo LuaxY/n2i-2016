@@ -1,3 +1,7 @@
+html{
+  overflow: hidden;
+}
+
 body{
   margin:0;
 }
@@ -15,11 +19,19 @@ p{
   padding: 10px;
 }
 
-.container{
-  width: 50%!important;
+.cadre{
+  width: 50%;
   border: 1px solid #37434f;
-  padding: 50px!important;
+  padding: 30px!important;
+  margin: 0 auto;
 }
+
+@media (max-width: 770px){
+  .cadre {
+      width: 80%;
+  }
+}
+
 
 .container form{
   margin: 0 auto;
@@ -36,8 +48,17 @@ p{
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 15%;
+  height: 22%;
   background: #37434f;
+}
+
+.footer .content{
+  padding: 25px;
+}
+
+.footer .content h3{
+  color: white;
+  border-bottom: 3px solid;
 }
 
 /* BASE */
