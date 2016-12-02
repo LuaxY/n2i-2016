@@ -58,6 +58,14 @@ p{
   cursor: pointer;
 }
 
+.itemArticle{
+  text-align: center;
+  background: #37434f;
+  color: white;
+  border-bottom:3px solid #36dcf6;
+  padding: 25px;
+}
+
 .item:hover{
     transition: background-color 0.5s;
     background-color: black;
@@ -72,10 +80,13 @@ p{
   .search{
     position: relative;
     text-align: center;
-    margin-left: 25px; 
+    margin-left: 25px;
   }
 }
 
+.item a {
+  text-decoration: none;
+}
 
 .line-separator{
   height:1px;

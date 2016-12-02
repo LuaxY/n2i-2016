@@ -10,9 +10,11 @@
 @if (empty($formations))
     Aucun post n'est disponible... Veuillez réessayer ultérieurement.
 @else
-    @foreach ($formations as $array)
+    @foreach ($formations as $formation)
         <div class="item">
-            <h4>{{ $array->title }}</h4>
+            <a href="{{ route('formation.view', [$formation->id]) }}">
+                <h4>{{ $formation->title }}</h4>
+            </a>
         </div>
     @endforeach
 @endif
