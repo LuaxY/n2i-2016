@@ -1,0 +1,47 @@
+body{
+  margin:0;
+}
+
+p{
+  font-weight: 600;
+}
+
+.header{
+  background: #37434f;
+  color: white;
+}
+
+.header h1{
+  padding: 10px;
+}
+
+.container{
+  width: 50%!important;
+  border: 1px solid #37434f;
+  padding: 50px!important;
+}
+
+.container form{
+  margin: 0 auto;
+}
+
+.line-separator{
+  height:1px;
+  background:#717171;
+  border-bottom:1px solid #ffffff;
+  margin-bottom: 25px;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  background: #37434f;
+}
+
+/* BASE */
+
+.center{
+  text-align: center;
+}
