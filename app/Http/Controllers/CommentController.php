@@ -16,7 +16,7 @@ class CommentController extends Controller
         $formation = Formation::findOrFail($formationId);
         $comments  = $formation->comments()->get();
 
-        return view('forum.topic', ['topic' => $formation, 'comments' => $comments]);
+        return view('forum.topic', ['back' => 'formation.view', 'backData' => [$formationId], 'topic' => $formation, 'comments' => $comments]);
     }
 
     public function page($formationId, $pageId)
@@ -24,7 +24,7 @@ class CommentController extends Controller
         $page      = Page::findOrFail($pageId);
         $comments  = $page->comments()->get();
 
-        return view('forum.topic', ['topic' => $page, 'comments' => $comments]);
+        return view('forum.topic', ['back' => 'page.view', 'backData' => [$formationId, $pageId], 'topic' => $page, 'comments' => $comments]);
     }
 
     public function store_formation(Request $request, $formationId)
@@ -46,7 +46,7 @@ class CommentController extends Controller
         $comment->formation_id = $formationId;
         $comment->save();
 
-        redirect()->route('formation.forum', [$formationId]);
+        return redirect()->route('formation.forum', [$formationId]);
     }
 
     public function store_page(Request $request, $formationId, $pageId)
@@ -68,6 +68,6 @@ class CommentController extends Controller
         $comment->page_id = $pageId;
         $comment->save();
 
-        redirect()->route('page.forum', [0, $pageId]);
+        return redirect()->route('page.forum', [0, $pageId]);
     }
 }
