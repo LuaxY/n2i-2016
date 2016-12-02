@@ -2,11 +2,13 @@
 @section('title') Formations @endsection
 @section('content')
 <h1 style="padding:10px;">FORMATIONS</h1>
-<form class="" action="{{ URL::route('search') }}" method="post">
-    Recherche: <input type="text" name="query" value="">
-</form>
+<div class="search">
+  <form class="" action="{{ URL::route('search') }}" method="post">
+      <p style="display:inline;">Recherche: </p><input type="text" name="query" value="">
+  </form>
+</div>
 @if (empty($formations))
-    Aucun post n'est disponible... Veuillez réessayer ultérieurement.
+    <p>Aucun post n'est disponible... Veuillez réessayer ultérieurement.</p>
 @else
     @foreach ($formations as $formation)
         <div class="item">

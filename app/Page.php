@@ -8,6 +8,6 @@ class Page extends Model
 {
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class, 'page_id', 'id');
     }
 }

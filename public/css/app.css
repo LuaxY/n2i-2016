@@ -109,8 +109,22 @@ p{
     background-color: black;
 }
 
+.search{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+@media (max-width: 666px){
+  .search{
+    position: relative;
+    text-align: center;
+    margin-left: 25px;
+  }
+}
+
 .item a {
   text-decoration: none;
+  color: inherit;
 }
 
 .line-separator{

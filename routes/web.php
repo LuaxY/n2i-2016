@@ -31,4 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::get('/test', function(){ return view('formation.view');});
+<<<<<<< HEAD
 Route::get('/welcome', function(){ return view('welcome');});
+=======
+>>>>>>> 6827b5185749ee1a0ac826bd5a12f27d49aaad88

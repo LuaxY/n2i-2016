@@ -44,8 +44,8 @@ class FormationController extends Controller
             $comments   = $comments->merge(Comment::where('text', 'LIKE', "%$keyword%")->get());
         }
 
-        dd($formations, $pages, $comments);
+        //dd($formations, $pages, $comments);
 
-        return view('search', compact($formations, $pages, $comments));
+        return view('search', ['formations' => $formations, 'pages' => $pages, 'comments' => $comments]);
     }
 }

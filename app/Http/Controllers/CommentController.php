@@ -14,15 +14,15 @@ class CommentController extends Controller
         $formation = Formation::findOrFail($formationId);
         $comments  = $formation->comments()->get();
 
-        return view('forum.topic', ['comments' => $comments]);
+        return view('forum.topic', ['topic' => $formation, 'comments' => $comments]);
     }
 
     public function page($formationId, $pageId)
     {
-        $page      = Page::findOrFail($formationId);
+        $page      = Page::findOrFail($pageId);
         $comments  = $page->comments()->get();
 
-        return view('forum.topic', ['comments' => $comments]);
+        return view('forum.topic', ['topic' => $page, 'comments' => $comments]);
     }
 
     public function store_formation(Request $request, $formationId)
