@@ -16,12 +16,8 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-
-        var_dump($request);
-
-
         $validator = Validator::make($request->all(), [
-            'email'    => 'required|email|unique,user',
+            'email'    => 'required|email|unique:users,email',
             'password' => 'required|confirmed',
         ]);
 
@@ -29,9 +25,6 @@ class UserController extends Controller
         {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
-        var_dump("in");
-        dd();
 
         $salt = str_random(8);
 

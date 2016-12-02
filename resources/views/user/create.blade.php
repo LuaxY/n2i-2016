@@ -9,7 +9,7 @@
               <h3 class="center">S'inscrire</h3>
               <div class="twelve columns">
                   <label for="mailInput">Email</label>
-                  <input name="username" class="u-full-width" type="email" placeholder="email@operator.com" id="mailInput">
+                  <input name="email" class="u-full-width" type="email" placeholder="email@operator.com" id="mailInput">
               </div>
               <div class="twelve columns">
                   <label for="passwordInput">Mot de Passe</label>
