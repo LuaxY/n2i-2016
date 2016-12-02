@@ -9,10 +9,10 @@
     <div class="container">
         <div class="row">
             <div class="six columns">
-                <div class="homebox"><p>Service - <span class="colorB">WeeCop</span></p></div>
+                <a href="{{ route('formation.list') }}"><div class="homebox"><p>Service - <span class="colorB">WeeCop</span></p></div></a>
             </div>
             <div class="six columns">
-                <div class="homebox"><p>Plateforme - <span class="colorB">Partage de connaissances</span></p></div>
+                <a href="{{ route('formation.list') }}"><div class="homebox"><p>Plateforme - <span class="colorB">Partage de connaissances</span></p></div></a>
             </div>
         </div>
     </div>

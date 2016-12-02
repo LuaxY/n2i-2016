@@ -68,6 +68,6 @@ class CommentController extends Controller
         $comment->page_id = $pageId;
         $comment->save();
 
-        redirect()->route('page.forum', [$pageId]);
+        redirect()->route('page.forum', [0, $pageId]);
     }
 }

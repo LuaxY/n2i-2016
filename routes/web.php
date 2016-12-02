@@ -17,7 +17,6 @@ Route::get('/register', 'UserController@create')->name('register');
 Route::post('/register', 'UserController@store')->name('register');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', 'FormationController@all')->name('home');
     Route::get('/logout', 'UserController@logout')->name('logout');
     Route::get('/formation', 'FormationController@all')->name('formation.list');
     Route::get('/formation/{formationId}', 'FormationController@view')->name('formation.view');
@@ -29,9 +28,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/search', 'FormationController@search')->name('search');
 });
 
+Route::get('/test', function() {
+    return view('formation.view');
+});
 
-Route::get('/test', function(){ return view('formation.view');});
-<<<<<<< HEAD
-Route::get('/welcome', function(){ return view('welcome');});
-=======
->>>>>>> 6827b5185749ee1a0ac826bd5a12f27d49aaad88
+Route::get('/', function() {
+    return view('welcome');
+});

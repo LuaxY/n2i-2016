@@ -20,7 +20,7 @@ p{
   margin: 0 auto;
 }
 
-.homebox{
+a .homebox{
   width: 50%;
   height: 250px;
   padding: 30px!important;
@@ -31,18 +31,22 @@ p{
   border-radius: 3px;
 }
 
-.homebox:hover{
+a .homebox:hover{
   cursor: pointer;
   background: black;
   transition: background .7s;
-  color: #ffffff;
-  transition: color .3s;
 }
 
-.homebox p {
+a .homebox p {
+  color: #000;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+a .homebox:hover p {
+    color: #ffffff;
+    transition: color .3s;
 }
 
 .colorB{
