@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="six columns">
-                <a href="{{ route('formation.list') }}"><div class="homebox"><p>Service - <span class="colorB">WeeCop</span></p></div></a>
+                <a href="{{ route('weecop') }}"><div class="homebox"><p>Service - <span class="colorB">WeeCop</span></p></div></a>
                 <div style="text-align:center; margin-top:10px;">
                   <p>Disponible sur : </p>
                   <a href=""><img src="{{ URL::asset('img/android.png') }}" style="margin-right:20px;"></a>
@@ -19,9 +19,9 @@
             <div class="six columns">
                 <a href="{{ route('formation.list') }}"><div class="homebox"><p>Plateforme - <span class="colorB">Partage de connaissances</span></p></div></a>
                 <div style="text-align:center; margin-top:10px;">
-                  <p>Disponible sur : </p>
+                  <!--<p>Disponible sur : </p>
                   <a href=""><img src="{{ URL::asset('img/android.png') }}" style="margin-right:20px;"></a>
-                  <a href=""><img src="{{ URL::asset('img/win.png') }}"></a>
+                  <a href=""><img src="{{ URL::asset('img/win.png') }}"></a>-->
                 </div>
             </div>
         </div>

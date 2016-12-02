@@ -1,0 +1,367 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    margin: auto;
+}
+.container.vertical .block__list{
+    margin-top: 0;
+}
+
+.container.vertical{
+    border-bottom: 1px solid white;
+}
+
+.container.vertical #filter button{
+    width: 73px;
+    position: absolute;
+    height: 75px;
+    right: 0;
+    top: 126px;
+    background: none;
+    font-size: 50px;
+    opacity: 1;
+    border-left: 1px solid white;
+}
+
+.sortable-ghost {
+    opacity: .2;
+}
+
+#foo .sortable-drag {
+    background: #daf4ff;
+}
+
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+
+.logo {
+    top: 55px;
+    left: 30px;
+    position: absolute;
+}
+
+.title {
+    color: #fff;
+    padding: 3px 10px;
+    display: inline-block;
+    position: relative;
+    background-color: #FF7373;
+    z-index: 1000;
+}
+
+.title_xl {
+    padding: 3px 15px;
+    font-size: 40px;
+}
+
+.tile {
+    width: 22%;
+    min-width: 245px;
+    color: #FF7270;
+    padding: 10px 30px;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-right: 30px;
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: top;
+}
+.tile__name {
+    cursor: move;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FF7373;
+}
+
+.tile__list {
+    margin-top: 10px;
+}
+
+.tile__list:last-child {
+    margin-right: 0;
+    min-height: 80px;
+}
+
+.tile__list img {
+    cursor: move;
+    margin: 10px;
+    border-radius: 100%;
+}
+
+.block {
+    opacity: 1;
+    position: absolute;
+}
+
+.block__list-title {
+    margin: -20px 0 0;
+    padding: 10px;
+    text-align: center;
+    background: #5F9EDF;
+}
+
+.block__list li {
+    cursor: move;
+}
+
+.block__list_words li {
+    color :white;
+    padding: 16px 40px;
+    transition: all ease 0.2s;
+}
+
+.block__list_words li:hover {
+    color :white;
+}
+
+.block__list_words li:last-child {
+    border: none;
+}
+
+.block__list_words li.inactive {
+    opacity: 0.5;
+}
+.block__list_words .sortable-ghost {
+    opacity: 0.6;
+}
+
+.block__list_words li:first-letter {
+    text-transform: uppercase;
+}
+
+.block__list_tags {
+    padding-left: 30px;
+}
+
+.block__list_tags:after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.block__list_tags li {
+    color: #fff;
+    float: left;
+    margin: 8px 20px 10px 0;
+    padding: 5px 10px;
+    min-width: 10px;
+    background-color: #5F9EDF;
+    text-align: center;
+}
+
+.block__list_tags li:first-child:first-letter {
+    text-transform: uppercase;
+}
+
+#editable ,#users {
+    width : 50%;
+    left : 0;
+    right : 0;
+    margin: auto;
+}
+#editable{
+    min-width : 450px;
+    overflow-y: scroll;
+    max-height: calc(100vh - 366px);
+}
+#users.full {
+    width : 100%!important;
+}
+#editable.full,#users.full{
+    width: 100%;
+    padding-left: 20px;
+}
+
+#editable li ,#users li {
+    position: relative;
+}
+#users li {
+    padding: 0px 18px;
+    padding-left: 0;
+    padding-right: 10px;
+    width: 90%;
+}
+#editable i ,#users i {
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
+    opacity: 0;
+    display: block;
+    cursor: pointer;
+    color: #c00;
+    top: 4px;
+    right: 18px;
+    position: absolute;
+    font-style: normal;
+}
+
+#users i {
+    top : 0px;
+}
+#editable li:hover i ,#users li:hover i {
+    opacity: 1;
+}
+
+#editable .js-edit,#users .js-edit{
+    height: 19px;
+    width: 19px;
+    background: url(../img/edit.png) center center no-repeat;
+    background-size: contain;
+    right: 50px;
+    top: 16px;
+}
+
+#trip li{
+    display: inline-block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding : 15px 40px;
+    font-size: 35px;
+    letter-spacing: 1px;
+    color : white;
+}
+
+#filter {}
+    #filter button {
+        color: #fff;
+        width: 100%;
+        border: none;
+        outline: 0;
+        opacity: .5;
+        margin: 10px 0 0;
+        transition: opacity .1s ease;
+        cursor: pointer;
+        background: #5F9EDF;
+        padding: 10px 0;
+        font-size: 20px;
+    }
+    #filter button.round {
+        color: #fff;
+        width: 75px;
+        height : 75px;
+        border: none;
+        outline: 0;
+        opacity: .8;
+        margin: 10px 0 0;
+        transition: opacity .1s ease;
+        cursor: pointer;
+        background: none;
+        font-size: 75px;
+        position: absolute;
+        bottom: 120px;
+        right: 20px;
+        border-radius: 50%;
+        transition: all ease 0.2s;
+    }
+    #filter button.round:hover{
+        width: 85px;
+        height : 85px;
+        bottom: 115px;
+        right: 15px;
+    }
+    #filter #checkDep{
+        width: 80%;
+        border: 0;
+        position: absolute;
+        bottom: 112px;
+        background: #37434f;
+        border-bottom: 6px solid #3ad9f6;
+        opacity: 1;
+    }
+        #filter button:hover {
+            opacity: 1;
+        }
+
+    #filter .block__list {
+        padding-bottom: 0;
+    }
+
+.drag-handle {
+    margin-right: 10px;
+    font: bold 20px Sans-Serif;
+    color: #5F9EDF;
+    display: inline-block;
+    cursor: move;
+    cursor: -webkit-grabbing;  /* overrides 'move' */
+}
+
+#todos input {
+    padding: 5px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+#nested ul li {
+    background-color: rgba(0,0,0,.05);
+}
+
+
+/*SWITCHER*/
+.switcher{
+    position: absolute;
+    right: 46px;
+    top: 18px;
+}
+
+.lbl {
+  position: relative;
+  display: block;
+  height: 20px;
+  width: 44px;
+  background: #898989;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lbl:after {
+  position: absolute;
+  left: -2px;
+  top: -3px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 100px;
+  background: #fff;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+  content: '';
+  transition: all 0.3s ease;
+}
+
+.lbl:active:after { transform: scale(1.15, 0.85); }
+
+.cbx:checked ~ label { background: #6fbeb5; }
+
+.cbx:checked ~ label:after {
+  left: 20px;
+  background: #179588;
+}
+
+.inactive label { background: #898989!important; }
+
+.inactive label:after {
+  left: -2px!important;
+    background: #fff!important;
+}
+
+.cbx:disabled ~ label {
+  background: #d5d5d5;
+  pointer-events: none;
+}
+
+.cbx:disabled ~ label:after { background: #bcbdbc; }
+
+.hidden { display: none; }
+
+.remboursement .block__list_words li{
+    padding : 5px 18px;
+}
