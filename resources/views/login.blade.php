@@ -8,7 +8,7 @@
   <div class="cadre">
     <form method="POST" action="">
         <div class="row">
-            <div class="center" style="margin-top:-20px;"><img src="../resources/assets/img/logo.png" width="220"></div>
+            <div class="center" style="margin-top:-20px;"><img src="{{ URL::asset('img/logo.png') }}" width="220"></div>
             <h3 class="center">Se connecter</h3>
             <div class="twelve columns">
                 <label for="mailInput">Email</label>

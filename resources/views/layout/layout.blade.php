@@ -8,8 +8,8 @@
     <title>@yield('title')</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-    <link href="../resources/assets/css/app.css" rel="stylesheet" type="text/css">
-    <link href="../resources/assets/css/skeleton.css" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('css/skeleton.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
 @yield('content')
