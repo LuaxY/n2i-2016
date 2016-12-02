@@ -1,6 +1,7 @@
 @extends('layout.layout')
 @section('title') {{ $topic->title }} @endsection
 @section('content')
+<a href="{{ route($back, $backData) }}"><img src="{{ URL::asset('img/back.png') }}" width="48" class="backLogo"></a>
     <div class="center"><h1 style="padding:10px;">Forum</h1></div>
     <div class="search">
       <form class="" action="{{ URL::route('search') }}" method="post">
