@@ -326,7 +326,7 @@ function initAddDep(){
             form: {
                 nom: 'Nom de la dépense',
                 nomuser: 'Nom du bénévole',
-                sharedWith : 'Personnes concernées séparées par une virgule ou "all" pour tous le monde',
+                sharedWith : 'Personnes concernées séparées par une virgule',
                 montant: 'Montant en €',
             },
             ok: 'Enter',
