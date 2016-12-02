@@ -10,15 +10,6 @@ p{
   font-weight: 600;
 }
 
-.header{
-  background: #37434f;
-  color: white;
-}
-
-.header h1{
-  padding: 10px;
-}
-
 .cadre{
   width: 50%;
   padding: 30px!important;

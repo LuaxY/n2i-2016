@@ -1,9 +1,6 @@
 @extends('layout.layout')
 @section('title') Connexion @endsection
 @section('content')
-<div class="header">
-    <h1>CONNEXION AU PARTAGE</h1>
-</div>
 <div class="container">
   <div class="cadre">
     <form method="POST" action="">
