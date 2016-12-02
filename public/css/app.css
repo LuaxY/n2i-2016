@@ -6,11 +6,49 @@ p{
   font-weight: 600;
 }
 
+.headWelcome{
+  padding: 25px;
+  background: url('../img/land.jpg')no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
 .cadre{
   width: 50%;
   padding: 30px!important;
   margin: 0 auto;
 }
+
+.homebox{
+  width: 50%;
+  height: 250px;
+  padding: 30px!important;
+  margin: 0 auto;
+  border: 1px solid #37434f;
+  margin-top: 35px;
+  position: relative;
+  border-radius: 3px;
+}
+
+.homebox:hover{
+  cursor: pointer;
+  background: black;
+  transition: background .7s;
+  color: #ffffff;
+  transition: color .3s;
+}
+
+.homebox p {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.colorB{
+  color: #37434F;
+}
+
 
 @media (max-width: 1460px){
   img{
