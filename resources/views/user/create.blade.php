@@ -24,6 +24,7 @@
           {{ csrf_field() }}
           <input type="hidden" name=validate" value="1">
       </form>
+      <div class="center"><p>Déjà inscrit ? <a href="login">Se connecter</a></p></div>
     </div>
   </div>
 
