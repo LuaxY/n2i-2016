@@ -68,7 +68,7 @@ class UserController extends Controller
             Auth::login($user, true);
         }
 
-        return redirect()->route('home');
+        return redirect()->route('formation.list');
     }
 
     public function logout()
