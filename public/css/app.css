@@ -60,13 +60,13 @@ a .homebox:hover p {
 
 
 @media (max-width: 1460px){
-  .center img{
+  .row .center img{
     width: 200px;
   }
 }
 
 @media (max-width: 1080px){
-  .center img{
+  .row .center img{
     width: 180px;
   }
 }
@@ -78,7 +78,7 @@ a .homebox:hover p {
   .footer{
     display: none;
   }
-  .center img{
+  .row .center img{
     width: 100px;
   }
 }
@@ -87,7 +87,7 @@ a .homebox:hover p {
   .footer{
     display: none;
   }
-  .center img{
+  .row .center img{
     width: 100px;
   }
 }
