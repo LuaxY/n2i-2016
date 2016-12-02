@@ -24,9 +24,9 @@ class FormationController extends Controller
         return view('formation.view', ['formation' => $formation]);
     }
 
-    public function search(Request $request, $query)
+    public function search(Request $request)
     {
-        $keywords = explode(' ', $query);
+        $keywords = explode(' ', $request->input('query'));
 
         if (!$keywords)
         {
@@ -43,6 +43,8 @@ class FormationController extends Controller
             $pages      = $pages->merge(Page::where('title', 'LIKE', "%$keyword%")->orWhere('text', 'LIKE', "%$keyword%")->get());
             $comments   = $comments->merge(Comment::where('text', 'LIKE', "%$keyword%")->get());
         }
+
+        dd($formations, $pages, $comments);
 
         return view('search', compact($formations, $pages, $comments));
     }

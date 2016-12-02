@@ -26,5 +26,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/formation/{formationId}/page/{pageId}', 'PageController@view')->name('page.view');
     Route::get('/formation/{formationId}/page/{pageId}/forum', 'CommentController@page')->name('page.forum');
     Route::post('/formation/{formationId}/page/{pageId}/forum', 'CommentController@store_page')->name('page.forum');
-    Route::post('/search/{query}', 'FormationController@search')->name('search');
+    Route::post('/search', 'FormationController@search')->name('search');
 });
