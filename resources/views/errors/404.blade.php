@@ -26,19 +26,20 @@
             bottom: 0;
             width: 100%;
             height: 100%;
-            z-index: 999;
+            z-index: 10;
         }
 
     </style>
     <script src="{{ URL::asset('js/three.min.js') }}"></script>
-    <script src="{{ URL::asset('js/OrbitControls.js') }}"></script>
     <script src="{{ URL::asset('js/OBJLoader.js') }}"></script>
     <script src="{{ URL::asset('js/MTLLoader.js') }}"></script>
+    <script src="{{ URL::asset('js/jquery.js') }}"></script>
     <script>
         var camera, scene, renderer;
         var controls;
         var element, container;
         var clock = new THREE.Clock();
+        var menu;
         var mesh;
         var geometry;
         var material;
@@ -49,6 +50,13 @@
         var Term;
         var mixerTerm;
         var ActionTerm = {};
+        var GUIobjects = [];
+        var Ismoving = 0;
+        var LeftPosition = 300;
+        var RightPosition = 298.1520043214178;
+        var TeamPosition = 296.5812079946229
+        var raycaster = new THREE.Raycaster();
+        var mouse = new THREE.Vector2();
 
         function init() {
             renderer = new THREE.WebGLRenderer({
@@ -62,15 +70,9 @@
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(65, 1, 0.001, 2000);
             camera.position.y = 16;
-            camera.rotation.y = 300;
+            camera.rotation.y = LeftPosition;
             camera.position.z = -3;
             scene.add(camera);
-            var spriteMaterial = new THREE.SpriteMaterial({
-                map: new THREE.ImageUtils.loadTexture('glow.png'),
-                color: 0x0000ff,
-                transparent: false,
-                blending: THREE.AdditiveBlending
-            });
             //initSky()
             LoadAsset("door");
             var light = new THREE.AmbientLight(0x404040); // soft white light
@@ -82,7 +84,7 @@
             light2.castShadow = true;
             scene.add(light2);
             var jsonLoader = new THREE.JSONLoader();
-            jsonLoader.load('/Assets/term.json', function(geometry, materials) {
+            jsonLoader.load('{{ URL::asset("Assets/term.json") }}', function(geometry, materials) {
                 materials.forEach(function(material) {
                     material.skinning = true;
                 });
@@ -98,7 +100,7 @@
                 scene.add(Term);
             });
             var jsonLoader2 = new THREE.JSONLoader();
-            jsonLoader2.load('/Assets/Porte.json', function(geometry, materials) {
+            jsonLoader2.load('{{ URL::asset("Assets/Porte.json") }}', function(geometry, materials) {
                 materials.forEach(function(material) {
                     material.skinning = true;
                 });
@@ -113,8 +115,44 @@
                 Door.rotation.y = (-Math.PI / 12);
                 scene.add(Door);
             });
+            var mtlLoader = new THREE.MTLLoader();
+            mtlLoader.setPath('{{ URL::asset("Assets") }}/');
+            mtlLoader.load('rond.mtl', function(materials) {
+                materials.preload();
+                var objLoader = new THREE.OBJLoader();
+                objLoader.setMaterials(materials);
+                objLoader.setPath('Assets/');
+                objLoader.load('rond.obj', function(object) {
+                    object.position.set(20, 5, 3);
+                    object.scale.set(1, 1, 1);
+                    object.rotation.y = (-Math.PI / 2) + (-Math.PI / 12);
+                    object.name = "Pia";
+                    GUIobjects.push(object);
+                    scene.add(object);
+                });
+            });
+            var mtlLoader2 = new THREE.MTLLoader();
+            mtlLoader2.setPath('{{ URL::asset("Assets") }}/');
+            mtlLoader2.load('world.mtl', function(materials) {
+                materials.preload();
+                var objLoader2 = new THREE.OBJLoader();
+                objLoader2.setMaterials(materials);
+                objLoader2.setPath('Assets/');
+                objLoader2.load('world.obj', function(object) {
+                    object.position.set(-5, 13, 16);
+                    object.scale.set(2.5, 2.5, 2.5);
+                    object.rotation.y = (-Math.PI / 2) + (-Math.PI / 12) - Math.PI / 2;
+                    object.name = "Pia";
+                    GUIobjects.push(object);
+                    scene.add(object);
+                    console.log("BOBO");
+                });
+            });
             setTimeout(resize, 1);
             window.addEventListener('resize', resize, false);
+            container.addEventListener('mousedown', TouchStart, false);
+            menu = document.getElementById('Menu');
+            menu.addEventListener('mousedown', TouchStart, false);
             animate();
         }
 
@@ -139,7 +177,44 @@
                 mixerTerm.update(delta);
                 //console.log(mixer);
             }
+            switch (Ismoving) {
+                case 0:
+                    break;
+                case 1:
+                    camera.rotation.y -= delta * 2;
+                    if (camera.rotation.y <= RightPosition) {
+                        camera.rotation.y = RightPosition;
+                        Ismoving = 0;
+                        ShowMenu(true);
+                    }
+                    break;
+                case 2:
+                    camera.rotation.y += delta * 2;
+                    if (camera.rotation.y >= LeftPosition) {
+                        camera.rotation.y = LeftPosition;
+                        Ismoving = 0;
+                    }
+                    break;
+                case 3:
+                    camera.rotation.y -= delta * 4;
+                    if (camera.rotation.y <= TeamPosition) {
+                        camera.rotation.y = TeamPosition;
+                        Ismoving = 0;
+                    }
+                    break;
+                default:
+                    break;
+            }
             requestAnimationFrame(animate);
+        }
+
+        function ShowMenu(visible) {
+            if (visible) {
+                //$("#Menu").css("display","block");
+                $("#Menu").fadeIn();
+            } else {
+                $("#Menu").fadeOut();
+            }
         }
 
         function resize() {
@@ -154,12 +229,12 @@
 
         function LoadAsset(path) {
             var mtlLoader = new THREE.MTLLoader();
-            mtlLoader.setPath('/Assets/');
+            mtlLoader.setPath('{{ URL::asset("Assets") }}/');
             mtlLoader.load(path + '.mtl', function(materials) {
                 materials.preload();
                 var objLoader = new THREE.OBJLoader();
                 objLoader.setMaterials(materials);
-                objLoader.setPath('/Assets/');
+                objLoader.setPath('{{ URL::asset("Assets") }}/');
                 objLoader.load(path + '.obj', function(object) {
                     object.position.set(20, 5, 3);
                     object.scale.set(1, 1, 1);
@@ -169,35 +244,62 @@
             });
         }
 
-        function initSky() {
-            // Add Sky Mesh
-            sky = new THREE.Sky();
-            camera.add(sky.mesh);
-            // Add Sun Helper
-            sunSphere = new THREE.Mesh(new THREE.SphereBufferGeometry(300, 16, 8), new THREE.MeshBasicMaterial({
-                color: 0xffffff
-            }));
-            sunSphere.position.y = -300;
-            sunSphere.visible = true;
-            camera.add(sunSphere);
-            var distance = 1000;
-            var uniforms = sky.uniforms;
-            uniforms.turbidity.value = 20;
-            uniforms.reileigh.value = 3;
-            uniforms.luminance.value = 1;
-            uniforms.mieCoefficient.value = 0.005;
-            uniforms.mieDirectionalG.value = 0.8;
-            var theta = Math.PI * (0.45 - 0.5);
-            var phi = 2 * Math.PI * (0.25 - 0.5);
-            sunSphere.position.x = distance * Math.cos(phi);
-            sunSphere.position.y = distance * Math.sin(phi) * Math.sin(theta);
-            sunSphere.position.z = distance * Math.sin(phi) * Math.cos(theta);
-            sky.uniforms.sunPosition.value.copy(sunSphere.position);
-            sky.mesh.scale.set(0.001, 0.001, 0.001);
+        function Move(value) {
+            Ismoving = value;
         }
 
+        function TouchStart(event) {
+            if (camera.rotation.y == RightPosition) {
+                Move(2);
+                ShowMenu(false);
+            }
+            if (camera.rotation.y == LeftPosition) {
+                Move(1);
+            }
+        }
+        //controls.minPolarAngle = Math.PI / 2;
+
     </script>
+    <style>
+        .link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menuitem {
+            width: 100%;
+            padding: 10px;
+            background-color: #37434f;
+            opacity: 0.7;
+            text-align: center;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .menuitem:hover {
+            background-color: #606d7a;
+        }
+
+    </style>
 </head>
 <body onload="init()">
-    <div id="Game" style="background-color : red"> </div> <button onclick="init()">Launch</button> </body>
+    <div id="Game" style="background-color : black"> </div>
+    <div id="Menu" style="display:none; position :absolute; width :100% ; height : 100%; top : 0%;z-index:999;">
+        <div style="width :100% ;  padding :  15px 10%; box-sizing : border-box;">
+            <div style="width : 100% ;  opacity :1; text-align : center; border-radius : 10px; box-sizing : border-box;"> <img style="max-width : 20% ;" src="Assets/Mascotte.png"></img>
+            </div>
+        </div>
+        <div style="width :100% ;  padding :  15px 10%; box-sizing : border-box;">
+            <div class="menuitem">
+                <h1 style="width :100% ;"><a  class="link" href="{{ route('login') }}">Connexion</a></h1> </div>
+        </div>
+        <div style="width :100% ;  padding :  15px 10%; box-sizing : border-box;">
+            <div class="menuitem">
+                <h1 style="width :100% ;  color: black;"><a class="link" href="{{ route('register') }}">Inscription</a></h1> </div>
+        </div>
+        <div style="width :100% ;  padding :  15px 10%; box-sizing : border-box;">
+            <div class="menuitem">
+                <h1 style="width :100% ; margin-top : 20px;"><a  class="link" href="{{ route('formation.list') }}">Formations</a></h1> </div>
+        </div>
+    </div> <button onclick="init()">Launch</button> </body>
 </html>
