@@ -21,7 +21,6 @@ p{
 
 .cadre{
   width: 50%;
-  border: 1px solid #37434f;
   padding: 30px!important;
   margin: 0 auto;
 }
@@ -42,6 +41,15 @@ p{
   .cadre {
       width: 80%;
   }
+  .footer{
+    display: none;
+  }
+  img{
+    width: 100px;
+  }
+}
+
+@media (max-height: 770px){
   .footer{
     display: none;
   }
