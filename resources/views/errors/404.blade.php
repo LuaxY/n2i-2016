@@ -30,10 +30,10 @@
         }
 
     </style>
-    <script src="/js/three.min.js"></script>
-    <script src="/js/OrbitControls.js"></script>
-    <script src="/js/OBJLoader.js"></script>
-    <script src="/js/MTLLoader.js"></script>
+    <script src="{{ URL::asset('/js/three.min.js') }}"></script>
+    <script src="{{ URL::asset('js/OrbitControls.js') }}"></script>
+    <script src="{{ URL::asset('js/OBJLoader.js') }}"></script>
+    <script src="{{ URL::asset('js/MTLLoader.js') }}"></script>
     <script>
         var camera, scene, renderer;
         var controls;
