@@ -27,11 +27,6 @@
 <div class="footer">
   <div class="content">
     <h3>Partage de connaissance</h3>
-    <ul>
-      <li><a href="">Accueil</a></li>
-      <li><a href="">Formation</a></li>
-      <li><a href="">Déconnexion</a></li>
-    </ul>
   </div>
 </div>
 @endsection

@@ -30,6 +30,12 @@ p{
   .cadre {
       width: 80%;
   }
+  img{
+    width: 100px;
+  }
+  .footer{
+    display: none;
+  }
 }
 
 
@@ -48,7 +54,7 @@ p{
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 22%;
+  height: 10%;
   background: #37434f;
 }
 
