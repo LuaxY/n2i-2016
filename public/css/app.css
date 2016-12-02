@@ -59,6 +59,7 @@ p{
   color: white;
   border-bottom:3px solid #36dcf6;
   padding: 25px;
+  cursor: pointer;
 }
 
 .item:hover{
