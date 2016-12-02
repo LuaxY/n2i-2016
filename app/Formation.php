@@ -13,6 +13,6 @@ class Formation extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class, 'formation_id', 'id');
     }
 }

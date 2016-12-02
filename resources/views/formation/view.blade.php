@@ -8,7 +8,9 @@
       </form>
     </div>
     <div class="itemArticle">
-        {{ $formation->description }}
+        {!! $formation->description !!}
+        <br><br>
+        <a href="{{ route('formation.forum', [$formation->id]) }}"><button style="color:#fff">Réagir sur le forum</button></a>
     </div>
     @foreach ($formation->pages()->get() as $page)
         <div class="item">

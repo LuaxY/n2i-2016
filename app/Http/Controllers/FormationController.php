@@ -46,6 +46,6 @@ class FormationController extends Controller
 
         //dd($formations, $pages, $comments);
 
-        return view('search', compact($formations, $pages, $comments));
+        return view('search', ['formations' => $formations, 'pages' => $pages, 'comments' => $comments]);
     }
 }
