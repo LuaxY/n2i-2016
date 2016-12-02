@@ -19,6 +19,7 @@
         <div class="center" style="margin-top:35px;"><input type="submit" value="Connexion"></div>
         {{ csrf_field() }}
     </form>
+    <div class="center"><p>Pas inscrit ? <a href="register">S'inscrire</a></p></div>
   </div>
 </div>
 
