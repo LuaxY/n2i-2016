@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection;
 use App\Formation;
 use App\Page;
 use App\Comment;
@@ -23,23 +24,26 @@ class FormationController extends Controller
         return view('formation.view', ['formation' => $formation]);
     }
 
-    public function search(Request $request)
+    public function search(Request $request, $query)
     {
-        $keywords = $request->input('query');
+        $keywords = explode(' ', $query);
 
         if (!$keywords)
         {
             redirect()->back()->withInput();
         }
 
+        $formations = new Collection;
+        $pages      = new Collection;
+        $comments   = new Collection;
+
         foreach ($keywords as $keyword)
         {
-            $formations = Formation::where('title', 'LIKE', "%keyworkd%")->orWhere('discription', 'LIKE', "%keyworkd%")->get();
-            $pages      = Page::where('title', 'LIKE', "%keyworkd%")->orWhere('text', 'LIKE', "%keyworkd%")->get();
-            $comments   = Comment::where('text', 'LIKE', "%keyworkd%")->get();
+            $formations = $formations->merge(Formation::where('title', 'LIKE', "%$keyword%")->orWhere('description', 'LIKE', "%$keyword%")->get());
+            $pages      = $pages->merge(Page::where('title', 'LIKE', "%$keyword%")->orWhere('text', 'LIKE', "%$keyword%")->get());
+            $comments   = $comments->merge(Comment::where('text', 'LIKE', "%$keyword%")->get());
         }
 
-        dd($formations);
-
+        return view('search', compact($formations, $pages, $comments));
     }
 }
