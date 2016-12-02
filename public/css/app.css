@@ -58,9 +58,21 @@ p{
   cursor: pointer;
 }
 
+.itemArticle{
+  text-align: center;
+  background: #37434f;
+  color: white;
+  border-bottom:3px solid #36dcf6;
+  padding: 25px;
+}
+
 .item:hover{
     transition: background-color 0.5s;
     background-color: black;
+}
+
+.item a {
+  text-decoration: none;
 }
 
 .line-separator{

@@ -28,3 +28,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/formation/{formationId}/page/{pageId}/forum', 'CommentController@store_page')->name('page.forum');
     Route::post('/search', 'FormationController@search')->name('search');
 });
+
+
+Route::get('/test', function(){ return view('formation.view');});
