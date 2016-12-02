@@ -28,10 +28,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/search', 'FormationController@search')->name('search');
 });
 
-Route::get('/test', function() {
-    return view('formation.view');
-});
-
 Route::get('/', function() {
     return view('welcome');
-});
+})->name('home');
