@@ -13,6 +13,8 @@
 
 Route::get('/login', 'UserController@login_form')->name('login');
 Route::post('/login', 'UserController@login')->name('login');
+Route::get('/register', 'UserController@create')->name('register');
+Route::post('/register', 'UserController@store')->name('register');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'FormationController@all')->name('home');
