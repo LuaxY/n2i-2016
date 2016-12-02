@@ -26,6 +26,18 @@ p{
   margin: 0 auto;
 }
 
+@media (max-width: 1460px){
+  img{
+    width: 200px;
+  }
+}
+
+@media (max-width: 1080px){
+  img{
+    width: 180px;
+  }
+}
+
 @media (max-width: 770px){
   .cadre {
       width: 80%;
