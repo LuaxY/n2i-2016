@@ -18,6 +18,11 @@
     <br>
     <div align="center">
         <h4>Ajouter un message</h4>
-        <textarea name="comment" rows="8" cols="80" style="height:200px"></textarea>
+        <form class="" action="" method="post">
+            {{ csrf_field() }}
+            <textarea name="comment" rows="8" cols="80" style="height:200px"></textarea>
+            <br>
+            <input type="submit" name="" value="Envoyer">
+        </form>
     </div>
 @endsection

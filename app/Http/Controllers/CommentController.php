@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
+use Auth;
 use App\Formation;
 use App\Page;
 use App\Comment;
@@ -30,7 +32,7 @@ class CommentController extends Controller
         $formation = Formation::findOrFail($formationId);
 
         $validator = Validator::make($request->all(), [
-            'text' => 'required',
+            'comment' => 'required',
         ]);
 
         if ($validator->fails())
@@ -39,7 +41,8 @@ class CommentController extends Controller
         }
 
         $comment = new Comment;
-        $comment->text         = $request->input('text');
+        $comment->text         = $request->input('comment');
+        $comment->user_id      = Auth::user()->id;
         $comment->formation_id = $formationId;
         $comment->save();
 
@@ -51,7 +54,7 @@ class CommentController extends Controller
         $page = Page::findOrFail($pageId);
 
         $validator = Validator::make($request->all(), [
-            'text' => 'required',
+            'comment' => 'required',
         ]);
 
         if ($validator->fails())
@@ -60,7 +63,8 @@ class CommentController extends Controller
         }
 
         $comment = new Comment;
-        $comment->text    = $request->input('text');
+        $comment->text    = $request->input('comment');
+        $comment->user_id = Auth::user()->id;
         $comment->page_id = $pageId;
         $comment->save();
 
