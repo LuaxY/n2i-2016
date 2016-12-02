@@ -12,7 +12,7 @@
     </div>
     @foreach ($comments as $comment)
         <div class="item">
-            {{ $comment->author()->first()->email }}: {{ $comment->text }}
+            {{ explode('@', $comment->author()->first()->email)[0] }}: {{ $comment->text }}
         </div>
     @endforeach
     <br>

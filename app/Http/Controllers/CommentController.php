@@ -46,7 +46,7 @@ class CommentController extends Controller
         $comment->formation_id = $formationId;
         $comment->save();
 
-        redirect()->route('formation.forum', [$formationId]);
+        return redirect()->route('formation.forum', [$formationId]);
     }
 
     public function store_page(Request $request, $formationId, $pageId)
@@ -68,6 +68,6 @@ class CommentController extends Controller
         $comment->page_id = $pageId;
         $comment->save();
 
-        redirect()->route('page.forum', [0, $pageId]);
+        return redirect()->route('page.forum', [0, $pageId]);
     }
 }

@@ -33,13 +33,13 @@
         @if (isset($comment->formation_id))
         <div class="item">
             <a href="{{ route('formation.forum', [$comment->formation_id]) }}">
-                <h4>{{ str_limit($comment->text, 25) }}...</h4>
+                <h4>{{ $comment->formation()->first()->title }}: {{ str_limit($comment->text, 25) }}...</h4>
             </a>
         </div>
         @else
         <div class="item">
             <a href="{{ route('page.forum', [0, $comment->page_id]) }}">
-                <h4>{{ str_limit($comment->text, 25) }}...</h4>
+                <h4>{{ $comment->page()->first()->formation()->first()->title }} - {{ $comment->page()->first()->title }}: {{ str_limit($comment->text, 25) }}...</h4>
             </a>
         </div>
         @endif
