@@ -8,8 +8,8 @@
     <title>Inscription</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-    <link href="../resources/assets/css/app.css" rel="stylesheet" type="text/css">
-    <link href="../resources/assets/css/skeleton.css" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('css/skeleton.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
   <div class="header">
@@ -19,7 +19,7 @@
     <div class="cadre">
       <form method="POST" action="">
           <div class="row">
-              <div class="center" style="margin-top:-20px;"><img src="../resources/assets/img/logo.png" width="220"></div>
+              <div class="center" style="margin-top:-20px;"><img src="{{ URL::asset('img/logo.css') }}" width="220"></div>
               <h3 class="center">S'inscrire</h3>
               <div class="twelve columns">
                   <label for="mailInput">Email</label>
