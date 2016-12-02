@@ -1,7 +1,14 @@
+@extends('layout.layout')
+@section('title') Formations @endsection
+@section('content')
+<h1 style="padding:10px;">FORMATIONS</h1>
 <?php
-/**
- * Created by PhpStorm.
- * User: kobe
- * Date: 02/12/2016
- * Time: 01:04
- */
+  for ($i=0; $i < 5 ; $i++) {
+    echo'
+      <div class="item">
+        <h4>FormationTitle'.$i.'</h4>
+      </div>
+    ';
+  }
+?>
+@endsection

@@ -49,9 +49,21 @@ p{
   }
 }
 
-
 .container form{
   margin: 0 auto;
+}
+
+.item{
+  text-align: center;
+  background: #37434f;
+  color: white;
+  border-bottom:3px solid #36dcf6;
+  padding: 25px;
+}
+
+.item:hover{
+    transition: background-color 0.5s;
+    background-color: black;
 }
 
 .line-separator{
@@ -59,23 +71,6 @@ p{
   background:#717171;
   border-bottom:1px solid #ffffff;
   margin-bottom: 25px;
-}
-
-.footer{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 10%;
-  background: #37434f;
-}
-
-.footer .content{
-  padding: 25px;
-}
-
-.footer .content h3{
-  color: white;
-  border-bottom: 3px solid;
 }
 
 /* BASE */
