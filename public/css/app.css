@@ -63,6 +63,20 @@ p{
     background-color: black;
 }
 
+.search{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+@media (max-width: 666px){
+  .search{
+    position: relative;
+    text-align: center;
+    margin-left: 25px; 
+  }
+}
+
+
 .line-separator{
   height:1px;
   background:#717171;
